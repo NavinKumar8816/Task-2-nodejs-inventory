@@ -1,9 +1,9 @@
-# 📦 Inventory Allocation System  
+#  Inventory Allocation System  
 ### Demo Task 2 – Node.js + React.js
 
 ---
 
-## 🛠 Tech Stack
+##  Tech Stack
 - **Backend:** Node.js, Express.js  
 - **Database:** MongoDB (Mongoose with Transactions)  
 - **Frontend:** React.js (Minimal UI)  
@@ -12,7 +12,7 @@
 
 ---
 
-## 🎯 Objective
+##  Objective
 This project demonstrates **clean backend architecture**, **strict API discipline**, and **concurrency-safe inventory allocation** using **only one API**, as required by the assignment.
 
 The focus of this task is on:
@@ -23,7 +23,7 @@ The focus of this task is on:
 
 ---
 
-## 📁 Folder Structure
+##  Folder Structure
 
 src/
 ├── routes/ # API routes (only one route)
@@ -39,9 +39,9 @@ frontend/ # React frontend
 
 ---
 
-## 🚀 API Design (STRICTLY FOLLOWED)
+##  API Design (STRICTLY FOLLOWED)
 
-### ➤ POST `/api/order`  *(ONLY API USED)*
+###  POST `/api/order`  *(ONLY API USED)*
 
 This single API performs **all required operations**:
 - Validate product existence  
@@ -51,29 +51,29 @@ This single API performs **all required operations**:
 - Prevent negative stock  
 - Handle concurrent requests safely  
 
-❌ No additional APIs were created  
-❌ No logic was split into multiple endpoints  
+ No additional APIs were created  
+ No logic was split into multiple endpoints  
 
 This design strictly follows the assignment rule of using **only one API**.
 
 ---
 
-## 🧠 Business Logic Placement
+##  Business Logic Placement
 
 The application follows clear separation of concerns:
 
-### 🔹 Controller Layer
+###  Controller Layer
 - Handles HTTP request and response only  
 - Contains **no business logic**
 
-### 🔹 Service Layer
+###  Service Layer
 - Implements all business logic:
   - Product validation
   - Stock validation
   - Order processing
   - Transaction handling
 
-### 🔹 Repository Layer
+###  Repository Layer
 - Handles all database interactions  
 - Keeps database logic separate from business logic  
 
@@ -81,23 +81,23 @@ This ensures clean, maintainable, and testable code.
 
 ---
 
-## 🔐 Concurrency & Race Condition Handling
+##  Concurrency & Race Condition Handling
 
 - MongoDB **sessions and transactions** are used  
 - MongoDB is run in **Replica Set mode** to support transactions  
 - Stock deduction and order creation are executed in **one atomic transaction**  
 - Prevents race conditions and negative stock scenarios  
 
-### ✅ Edge Case Handled (Mandatory)
+###  Edge Case Handled (Mandatory)
 - Product stock = **5**  
-- Order 1 → quantity **3** → ✅ success  
-- Order 2 → quantity **3** → ❌ fails  
+- Order 1 → quantity **3** →  success  
+- Order 2 → quantity **3** →  fails  
 
 This confirms correct concurrency handling.
 
 ---
 
-## 🖥 Frontend (React Implementation)
+##  Frontend (React Implementation)
 
 - Simple React form with:
   - Product ID input
@@ -110,7 +110,7 @@ The frontend is intentionally minimal as per assignment instructions.
 
 ---
 
-## ▶️ How to Run the Project
+##  How to Run the Project
 
 ### Backend
 ```bash
